@@ -3,7 +3,7 @@ import bitly_api
 import json
 
 
-def get_shortened(long_url):
+def get_short_url(long_url):
     """
     Get shortened url using bit.ly.
     :param long_url: Long url to be shortened.
