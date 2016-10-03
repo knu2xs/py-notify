@@ -4,4 +4,5 @@ from notify.gmail import send_gmail
 __all__ = [
     'send_sms',
     'send_gmail'
+    'get_short_url'
 ]
