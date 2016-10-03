@@ -33,9 +33,21 @@ The phone number *must* be in the +12348876390 format with no spaces, or the mes
 
 Messages are limited to 160 characters. Anything more will be truncated.
 
+### notify.get_short_url
+
+```
+Get shortened url using bit.ly.
+    :param long_url: Long url to be shortened.
+    :param login: Bitly login for api.
+    :param api_key: Bitly api key corresponding to the login.
+    :return: Strung shortened url.
+```
+
+This method is included as a helper since many times, if a hyperlink is to be included in a text message, the hyperlink needs to be shortened. This does require credentials for bit.ly.
+
 ## Configuration
 
-While the included methods can be invoked directly, passing credentials into the script at runtime, it is a little easier and more reusable to create a configuration file containing the credentials. Start by creating a directory called `resources` inside the `notify` package directory. Inside the `resources` directory, create a file called `credentials.json`. This file should contain the following verbatium - except replacing the values with the email/password for gmail, and the Amazon Web Services access key ID and secret access key for sending text messages.
+While the included methods can be invoked directly, passing credentials into the script at runtime, it is a little easier and more reusable to create a configuration file containing the credentials. Start by creating a directory called `resources` inside the `notify` package directory. Inside the `resources` directory, create a file called `credentials.json`. This file should contain the following verbatium - except replacing the values with the email/password for gmail, the Amazon Web Services access key ID and secret access key for sending text messages, and the bit.ly login and api_key.
 
 ```
 {
@@ -46,10 +58,14 @@ While the included methods can be invoked directly, passing credentials into the
   "aws_sns": {
     "aws_access_key_id": "GIBBERISHACCESSKEY",
     "aws_secret_access_key": "EVENMOREGIBBERISHSECRETACCESSKEY"
+  },
+  "bitly": {
+    "login": "o_sweet05login",
+    "api_key": "R_g1bb3r1shg1bb3r1shg1bb3r1sh"
   }
 }
 ```
 
 ## Included Packages
 
-Three packages, `boto3`, `botocore`, and `jmespath` are included as part of this repository. If these are installed on your system using a package manager, you do not need them in this directory. They are included for the sake of simplicity of use.
+Three packages, `boto3`, `botocore`, `jmespath`, and bitly_api are included as part of this repository. If these are installed on your system using a package manager, you do not need them in this directory. They are dependencies included for the sake of simplicity of use.
