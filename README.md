@@ -68,4 +68,4 @@ While the included methods can be invoked directly, passing credentials into the
 
 ## Included Packages
 
-Three packages, `boto3`, `botocore`, `jmespath`, and bitly_api are included as part of this repository. If these are installed on your system using a package manager, you do not need them in this directory. They are dependencies included for the sake of simplicity of use.
+Three packages, `boto3`, `botocore`, `jmespath`, and `bitly_api` are included as part of this repository. If these are installed on your system using a package manager, you do not need them in this directory. They are dependencies included for the sake of simplicity of use.
