@@ -27,5 +27,8 @@ def get_short_url(long_url, login=None, api_key=None):
         # get a secure connection using credentials
         connection = bitly_api.Connection(login=credentials['login'], api_key=credentials['api_key'])
 
-    # shorten the url and return the result
-    return connection.shorten(uri=long_url)
+    # shorten the url
+    response = connection.shorten(uri=long_url)
+
+    # return the shortened url from the response
+    return response['url']
