@@ -137,3 +137,4 @@ fabric.properties
 
 # any resources directories
 **/*resources
+.idea/
