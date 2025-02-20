@@ -4,7 +4,7 @@ __author__ = "Joel McCune (https://github.com/knu2xs)"
 __license__ = "Apache 2.0"
 __copyright__ = "Copyright 2023 by Joel McCune (https://github.com/knu2xs)"
 
-__all__ = ["send_email", "send_pushover"]
+__all__ = ["send_pushover", "send_sms"]
 
 import logging
 import re

@@ -33,23 +33,6 @@ author = 'Joel McCune (https://github.com/knu2xs)'
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
 
-# -- Copying notebooks for inclusion -----------------------------------------
-prj_dir = os.path.abspath('../')
-
-def all_but_ipynb(dir, contents):
-    result = []
-    for c in contents:
-        if os.path.isfile(os.path.join(dir,c)) and (not c.endswith(".ipynb")):
-            result += [c]
-    return result
-
-shutil.rmtree(os.path.join(prj_dir, "docsrc", "notebooks"), ignore_errors=True)
-shutil.copytree(
-    os.path.join(prj_dir, "notebooks"),
-    os.path.join(prj_dir, "docsrc", "notebooks"),
-    ignore=all_but_ipynb
-)
-
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
