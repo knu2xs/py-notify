@@ -1,9 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 
 # C extensions
 *.so
@@ -22,9 +19,9 @@ lib64/
 parts/
 sdist/
 var/
-*.egg-info/
+**/*.egg-info/
 .installed.cfg
-*.egg
+**/*.egg
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -38,103 +35,63 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-.hypothesis/
+**/*.tox/
+**/*.coverage
+**/*.coverage.*
+**/*.cache
+**/*nosetests.xml
+**/*coverage.xml
+**/*.cover
+**/*.pytest_cache
 
 # Translations
-*.mo
-*.pot
+**/*.mo
+**/*.pot
 
 # Django stuff:
-*.log
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
+**/*.log
 
 # Sphinx documentation
-docs/_build/
+docsrc/_build/
+docsrc/build/
 
 # PyBuilder
 target/
 
-# IPython Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# dotenv
+# configuration files
+**/secrets.ini
 .env
 
-# virtualenv
-venv/
-ENV/
+# Database
+**/*.db
+**/*.rdb
 
-# Spyder project settings
-.spyderproject
+# Pycharm
+.idea
 
-# Rope project settings
-.ropeproject
-### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+# VS Code
+.vscode/
 
-# User-specific stuff:
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
+# Spyder
+.spyproject/
 
-# Sensitive or high-churn files:
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/dataSources.local.xml
-.idea/sqlDataSources.xml
-.idea/dynamic.xml
-.idea/uiDesigner.xml
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
 
-# Gradle:
-.idea/gradle.xml
-.idea/libraries
+# exclude data from source control by default
+data/
+models/
 
-# Mongo Explorer plugin:
-.idea/mongoSettings.xml
+# Mac OS-specific storage files
+**/*.DS_Store
 
-## File-based project format:
-*.iws
+# ignore the caches created for ArcMap
+arcgis/Index
+arcgis/ImportLog
+arcgis/.backups
 
-## Plugin-specific files:
+# make sure the environment is not included
+env/
 
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-# any resources directories
-**/*resources
-.idea/
+# exclude the docs build directory
+docs/

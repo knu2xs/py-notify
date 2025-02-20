@@ -1,0 +1,31 @@
+name: py_notify
+
+channels:
+  - conda-forge
+
+dependencies:
+  - arcgis
+  - black>=21
+  - jupyterlab
+  - jupyterlab_code_formatter
+  - nodejs
+  - pandoc
+  - pip
+  - pytest
+  - pyyaml
+  - requests
+  - seaborn
+  - pip:
+    - autodocsumm
+    - azure-communication-sms
+    - build
+    - bump2version
+    - furo
+    - ipykernel
+    - nbsphinx
+    - python-dotenv
+    - sphinx
+    - sphinxcontrib-youtube
+    - sphinx-autodoc-typehints
+    - sphinx-copybutton
+    - twine

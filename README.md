@@ -1,71 +1,40 @@
-# Py-Notify
+# py-notify
 
-This package enables sending email and text messages from a Python script. This enables sending email or a text message as part of a processing workflow, typically for either emergency notification, or simply to know when a long running workflow is complete.
+Enable quickly adding notification capabilities to projects.
 
-## Use
+## Getting Started
 
-There are two methods available in the notify package, one for sending a notification email through gmail, and another for sending a text message using the simple message service (SMS) protocol using the Amazon Web Services Simple Notification Service.
+1 - Clone this repo.
 
-### notify.send_gmail
-
+2 - Create an environment with the requirements.
+    
 ```
-notify.send_gmail(address_to, subject, body, importance='normal', address_from=None, password=None)
-    :param address_to: Target address.
-    :param subject: Email subject.
-    :param body: The message...the meat.
-    :param importance: Importance set to high, normal, or low.
-    :param address_from: Optional Gmail address of the sender.
-    :param password: Optional password for sender's Gmail account.
+        > make env
 ```
 
-This method, not surprisingly, is used to send a message via Gmail. If a credentials file is created as part of the setup detailed below, it is not necessary to provide more than a recipient address, subject, and body text. Importance (low, normal, or high) is optional. If an email and password are provided, they will be used instead of anything provided in a configuration file.
+3 - Explore - If you are more into Python, a good place to start is `jupyter lab` from the root of the project, and look in the `./notebooks` directory. If GIS is more your schtick, open the project `./arcgis/py-notify.aprx`.
 
-### notify.send_sms
-```
-send_sms(phone_number, message, aws_access_key_id=None, aws_secret_access_key=None):
-    :param phone_number: Ten digit domestic phone number.
-    :param message: Message to send to phone - must be less than 160 characters.
-```
+## Using Make - common commands
 
-This method is used to send a message, a text, using the simple message service (SMS) protocol through Amazon Web Service's (AWS) Simple Notification Service (SNS).
+Based on the pattern provided in the [Cookiecutter Data Science template by Driven Data](https://drivendata.github.io/cookiecutter-data-science/) this template streamlines a number of commands using the `make` command pattern.
 
-The phone number *must* be in the +12348876390 format with no spaces, or the message will not work. Currently the script does not have formatting or error catching to account for this. It will just silently fail.
+- `make env` - builds the Conda environment with all the name and dependencies from `environment_dev.yml` and installs the local project package `py_notify` using the command `python -m pip install -e ./src/src/py_notify` so you can easily test against the package as you are developing it.
 
-Messages are limited to 160 characters. Anything more will be truncated.
+- `make env_clone` - designed for environments using the default Conda instance installed with ArcGIS Pro. It is similar to `make env`, except this command clones the `arcgispro-py3` environment. Otherwise, it still installs the packages listed in `environment_dev.yml` and installs the local package using `pip` as described above.
 
-### notify.get_short_url
+- `make docs` - builds Sphinx docs based on files in `./docsrc/source` and places them in `./docs`. This enables easy publishing in the master branch in GitHub.
 
-```
-Get shortened url using bit.ly.
-    :param long_url: Long url to be shortened.
-    :param login: Bitly login for api.
-    :param api_key: Bitly api key corresponding to the login.
-    :return: Strung shortened url.
-```
+- `make test` - activates the environment created by the `make env` or `make env_clone` and runs all the tests in the `./testing` directory using PyTest. Alternately, if you prefer to use [TOX](https://tox.readthedocs.io) for testing (my preference), there is a `tox.ini` file included as well. The dependencies (`tox` and `tox-conda`) for using TOX are included in the default requirements. By default, the TOX file creates an environment from the `environment.yml` file using much fewer dependencies than the `*_dev.yml` files.
 
-This method is included as a helper since many times, if a hyperlink is to be included in a text message, the hyperlink needs to be shortened. This does require credentials for bit.ly.
+## BumpVersion Cliff Notes
 
-## Configuration
+[Bump2Version](https://github.com/c4urself/bump2version) is preconfigured based on hints from [this article on Medium](https://williamhayes.medium.com/versioning-using-bumpversion-4d13c914e9b8).
 
-While the included methods can be invoked directly, passing credentials into the script at runtime, it is a little easier and more reusable to create a configuration file containing the credentials. Start by creating a directory called `resources` inside the `notify` package directory. Inside the `resources` directory, create a file called `credentials.json`. This file should contain the following verbatium - except replacing the values with the email/password for gmail, the Amazon Web Services access key ID and secret access key for sending text messages, and the bit.ly login and api_key.
+If you want to...
 
-```
-{
-  "gmail": {
-    "username": "secommteam@gmail.com",
-    "password": "P@$$W0rd...or something"
-  },
-  "aws_sns": {
-    "aws_access_key_id": "GIBBERISHACCESSKEY",
-    "aws_secret_access_key": "EVENMOREGIBBERISHSECRETACCESSKEY"
-  },
-  "bitly": {
-    "login": "o_sweet05login",
-    "api_key": "R_g1bb3r1shg1bb3r1shg1bb3r1sh"
-  }
-}
-```
+- apply a patch, `bumpversion patch`
+- update version with no breaking changes (minor version update), `bumpversion minor`
+- update version with breaking changes (major version update), `bumpversion major`
+- create a release (tagged in vesrion control - Git), `bumpversion --tag release`
 
-## Included Packages
-
-Three packages, `boto3`, `botocore`, `jmespath`, and `bitly_api` are included as part of this repository. If these are installed on your system using a package manager, you do not need them in this directory. They are dependencies included for the sake of simplicity of use.
+<p><small>Project based on the <a target="_blank" href="https://github.com/knu2xs/cookiecutter-geoai">cookiecutter GeoAI project template</a>. This template, in turn, is simply an extension and light modification of the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>

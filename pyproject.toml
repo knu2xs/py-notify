@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm>=8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-notify"
+version = "0.0.0"
+authors = [
+  { name="Joel McCune (https://github.com/knu2xs)"},
+]
+description = "Enable quickly adding notification capabilities to projects."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+license = {file = "LICENSE"}
+dependencies = [
+    "azure-communication-sms",
+    "requests"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["py_notify"]
