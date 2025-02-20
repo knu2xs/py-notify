@@ -32,6 +32,10 @@ jobs:
     # get the repo contents
     - uses: actions/checkout@v4
 
+    # refresh apt-get due to some issues with not getting resources from some mirrors
+    - name: Refresh apt-get mirrors
+      run: "sudo apt-get clean"
+
     # install pandoc so nbsphinx will work
     - name: Install PanDoc
       run: "sudo apt-get install pandoc"
