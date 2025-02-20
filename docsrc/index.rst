@@ -8,6 +8,15 @@ Py-Notify Documentation
 This documentation is generated from the template defined in ``./docsrc/source/index.rst``. This location and
 file is the place to start creating documentation for your project.
 
+Setup
+------
+
+Pushover
+^^^^^^^^^
+
+Azure Simple-Message-Service (SMS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ``py_notify`` API
 =================
 
