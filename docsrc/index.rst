@@ -8,18 +8,10 @@ Py-Notify Documentation
 This documentation is generated from the template defined in ``./docsrc/source/index.rst``. This location and
 file is the place to start creating documentation for your project.
 
-py_notify
-================================
+``py_notify`` API
+=================
 
 .. automodule:: py_notify
-    :members:
-
-py_notify.utils
------------------------------------------------------------
-
-These utilities are included by default to speed up the development process.
-
-.. automodule:: py_notify.utils
     :members:
 
 Indices and tables
