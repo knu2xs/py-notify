@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "setuptools-scm>=8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py-notify"
+name = "py-message"
 version = "1.0.1"
 authors = [
   { name="Joel McCune (https://github.com/knu2xs)"},
