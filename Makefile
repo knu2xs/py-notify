@@ -5,7 +5,7 @@
 #################################################################################
 
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-PROJECT_NAME = py-notify
+PROJECT_NAME = py-message
 ENV = $(PROJECT_DIR)/env
 
 #################################################################################

@@ -18,7 +18,7 @@ Azure Simple-Message-Service (SMS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``py_message`` API
-=================
+===================
 
 .. automodule:: py_message
     :members:
