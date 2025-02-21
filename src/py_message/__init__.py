@@ -1,4 +1,4 @@
-__title__ = "py-notify"
+__title__ = "py-message"
 __version__ = "1.1.0"
 __author__ = "Joel McCune (https://github.com/knu2xs)"
 __license__ = "Apache 2.0"
