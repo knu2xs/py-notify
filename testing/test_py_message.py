@@ -19,19 +19,19 @@ load_dotenv(find_dotenv())
 
 # insert the src directory into the path and import the projct package
 sys.path.insert(0, str(dir_src))
-import py_notify
+import py_message
 
 def test_send_sms():
 
-    message = "Test Py-Notify SMS"
-    resp_lst = py_notify.send_sms(message)
+    message = "Test Py-Message SMS"
+    resp_lst = py_message.send_sms(message)
 
     assert all([resp.successful for resp in resp_lst])
 
 
 def test_send_pushover():
 
-    message = "Test Py-Notify Pushover"
-    resp = py_notify.send_pushover(message)
+    message = "Test Py-Message Pushover"
+    resp = py_message.send_pushover(message)
     
     assert(resp)

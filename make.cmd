@@ -25,8 +25,8 @@
 
 SETLOCAL
 SET PROJECT_DIR=%cd%
-SET PROJECT_NAME=py-notify
-SET SUPPORT_LIBRARY = py_notify
+SET PROJECT_NAME=py-message
+SET SUPPORT_LIBRARY = py_message
 SET CONDA_DIR="%~dp0env"
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
