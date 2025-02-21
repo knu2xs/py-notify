@@ -17,10 +17,10 @@ Pushover
 Azure Simple-Message-Service (SMS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``py_notify`` API
+``py_message`` API
 =================
 
-.. automodule:: py_notify
+.. automodule:: py_message
     :members:
 
 Indices and tables
