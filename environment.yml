@@ -4,7 +4,6 @@ channels:
   - conda-forge
 
 dependencies:
-  - arcgis
   - black>=21
   - jupyterlab
   - jupyterlab_code_formatter
@@ -12,9 +11,7 @@ dependencies:
   - pandoc
   - pip
   - pytest
-  - pyyaml
   - requests
-  - seaborn
   - pip:
     - autodocsumm
     - azure-communication-sms
